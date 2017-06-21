@@ -1,3 +1,4 @@
+someWords
 <IfModule mod_expires.c>
 	Header append Cache-Control "public"
 	FileETag MTime Size
