@@ -1,4 +1,6 @@
 <IfModule mod_expires.c>
+	Header append Cache-Control "public"
+	FileETag MTime Size
     ExpiresActive on
     ExpiresDefault                                      "access plus 1 month"
 
