@@ -950,23 +950,7 @@
 	<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyANl38wSNm4oCFm-T4tO7a_mxaG1mpHEfo"></script>
 	<script src="js/main.js"></script>
 	
-	$(function(){
-		   $(#testing-recapture').submit(function(e){
-		    e.preventDefault(); //это чтобы форма не отправлялась через браузер, только по AJAX
-		     var formdata='name='+$('#name').val()+'&tel='+$('#tel').val()+'&text='+$('#text').val();
-		    //запишем все данные формы в переменную data
-		    $.ajax({
-		      url: 'https://github.com/bessistemn1i/project-01.github.io/blob/master/send.php',
-		      data: formdata,
-		      type: 'post',
-		      success: function(respond){
-			alert(respond);
-		      },
-		      error: function(){
-			alert('Произошла ошибка. Повторите попытку позже.');
-		      }
-		    });
-		  });
-		});
+	
+	
 </body>
 </html>
