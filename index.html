@@ -858,7 +858,7 @@
 	<div class="forms">
 		<h2>keep in touch</h2>
 		<form action="post">
-			<input type="text" id="Name" name="Name" placeholder="Name">
+			<input type="text" id="name" name="Name" placeholder="Name">
 			<input type="email" id="email" name="email" placeholder="Email">
 			<textarea name="message" id="message" cols="30" rows="8" placeholder="Message"></textarea>
 			<button type="submit" class="send">Send Request</button>
@@ -949,5 +949,24 @@
 </footer>
 	<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyANl38wSNm4oCFm-T4tO7a_mxaG1mpHEfo"></script>
 	<script src="js/main.js"></script>
+	
+	$(function(){
+		   $('.send').submit(function(e){
+		    e.preventDefault(); //это чтобы форма не отправлялась через браузер, только по AJAX
+		    var formdata='name='+$('#name').val()+'&email='+$('#email').val()+'&message='+$('#message').val();
+		    //запишем все данные формы в переменную data
+		    $.ajax({
+		      url: 'https://github.com/bessistemn1i/project-01.github.io/blob/master/send.php',
+		      data: formdata,
+		      type: 'post',
+		      success: function(respond){
+			alert(respond);
+		      },
+		      error: function(){
+			alert('Произошла ошибка. Повторите попытку позже.');
+		      }
+		    });
+		  });
+		});
 </body>
 </html>
